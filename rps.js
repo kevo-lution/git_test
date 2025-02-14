@@ -76,4 +76,7 @@ function playRound(targetScore){
 	}
 }
 
-playRound(4);
+//playRound();
+
+
+//variable for cpu/player score and link it with getElementByID

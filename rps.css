@@ -1,0 +1,39 @@
+
+
+@font-face {
+    font-family: instagram;
+    src: url(Instagram_Sans.ttf);
+}
+
+html{
+    font-family: instagram;
+}
+.container{
+    display: flex;
+    border: 2px solid orange;
+    height: 60vh;
+    flex-direction: column;
+}
+.names{
+    display: flex;
+    height: 3vh;
+    justify-content: center;
+}
+.scoreboard{
+    display: flex;
+    justify-content: center;
+
+}
+.username{
+    display: flex;
+    justify-content: center;
+    gap: 660px;
+}
+.scores{
+    display: flex;
+    justify-content: center;
+    gap: 680px;
+}
+li{
+    list-style-type: none;
+}
