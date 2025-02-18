@@ -91,7 +91,11 @@ function playRound(targetScore){
 	}
 }
 
-//playRound(3);
+playRound(3);
 
 
 //variable for cpu/player score and link it with getElementByID
+
+//add buttons
+//hover over buttons and show image
+//
