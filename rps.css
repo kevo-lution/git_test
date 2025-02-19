@@ -10,18 +10,21 @@ html{
 }
 .container{
     display: flex;
-    border: 2px solid orange;
-    height: 60vh;
+    justify-content: space-between;
+    align-items: center;
+    height: 70vh;
     flex-direction: column;
 }
 .names{
     display: flex;
     height: 3vh;
     justify-content: center;
+    flex: 1;
 }
 .scoreboard{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
 
 }
 .username{
@@ -29,23 +32,48 @@ html{
     display: flex;
     justify-content: center;
     gap: 1200px;
+    flex: auto;
 }
 .scores{
     display: flex;
     justify-content: center;
     gap: 1240px;
     font-size: 30px;
+    flex-shrink: 1;
 
 }
 li{
     list-style-type: none;
 }
 
-.rps{
+.rps-image{
     display: flex;
     border: blue solid 3px;
-    margin: 100px 500px;
-    padding: 100px 200px;
-    height: 300px;
-    width: 200px;
+    margin-bottom:150px;
+    height: 400px;
+    width: 400px;
+    flex-shrink: 4;
 }
+
+.buttons{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 7%;
+    padding: 5px;
+}
+
+.btn{
+    background-color: crimson;
+    border: none;
+    border-radius: 2px;
+    padding: 10px 40px;
+    color: white;
+}
+
+.btn:hover{
+    background-color: crimson;
+    transition: 200ms;
+    color: black;
+}
+
