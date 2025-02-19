@@ -1,26 +1,61 @@
+
+
 // players
 let player1;
 let cpu;
 //options
-const rock = 0;
-const paper = 1;
-const scissors = 2;
+const rock = document.getElementById("rocks");
+const paper = document.getElementById("paper");
+const scissors = document.getElementById("scissors");
+let choice;
+const buttons = document.querySelectorAll("button")
+
+/*button listeners
+rock.addEventListener("click", playerLogic);
+paper.addEventListener("click", playerLogic);
+scissors.addEventListener("click", playerLogic);
+
+*/
 
 // scoring logic
 let player1score = 0;
 let cpuScore = 0;
 
+
 function playerLogic() {
-    return Number(prompt("Enter a number 0 - 2: Rock = 0, Paper = 1, Scissors = 2"));
-	//const rock = document.getElementById("rock");
-	//const paper = document.getElementById("paper")
-	//const scissors = document.getElementById("scissor")
+	buttons.forEach((button) => {
+		button.addEventListener("click", () => {
+		const buttonID = button.id
+	
+		let choice;
+		if (buttonID === "rocks"){
+			choice = rock;
+		} else if (buttonID === "paper"){
+			choice = paper
+		} else if (buttonID === "scissors"){
+			choice = scissors
+		}
+		choice = choice.innerText
+		console.log(choice)
+		return choice
+		})
+	});
+}	
+
+function waitForUser(choice){
+	console.log(`${choice} has been received.`)
+	timeout = Math.floor(Math.random() * 600);
+	console.log(timeout)
+	//setTimeout(computerLogic, timeout)
+
 }
 
-// This is the computer logic
-function computerLogic() {
-    return Math.floor(Math.random() * 3); // Random number between 0 and 2
+function computerLogic(){
+	return Math.floor(Math.random() * 3);
 }
+
+
+// This is the computer logic
 
 function updateWinner(winner){
 	if (winner === player1){
@@ -33,6 +68,7 @@ function updateWinner(winner){
 }
 
 function playRound(targetScore){
+	//checks score
 	while (player1score < targetScore && cpuScore < targetScore){
 		if (targetScore === player1score){
 			console.log("Congratulations, Player 1 has won the game.")
@@ -41,8 +77,11 @@ function playRound(targetScore){
 			console.log("Congratulations, CPU has won the game.")
 			break;
 		}
+
+
 		player1 = playerLogic();
-		cpu = computerLogic();
+		waitForUser()
+		cpu = computerLogic(playerLogic);
 
 		console.log(`Player 1 chose ${player1 == 0 ? 'Rock' : player1 == 1 ? 'Paper' : 'Scissors'}`);
 		console.log(`The computer chose ${cpu == 0 ? 'Rock' : cpu == 1 ? 'Paper' : 'Scissors'}`);
@@ -86,7 +125,24 @@ function playRound(targetScore){
 }
 
 
-playRound(2)
+//playRound(1)
+
+
+/*
+Steps:
+Below image box, ask user to select a choice
+
+after choice is selected, tell them the computer is thinking
+
+while thinking rotate through all 3 images
+
+after, show image of what won
+
+then award point to correct user
+
+tells them to select another choice
+
+*/
 
 //variable for cpu/player score and link it with getElementByID
 

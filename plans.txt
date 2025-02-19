@@ -1,0 +1,25 @@
+Steps:
+
+Below image box, ask user to select a choice
+
+after choice is selected, tell them the computer is thinking
+
+while thinking rotate through all 3 images
+
+after, show image of what won
+
+then award point to correct user
+
+tells them to select another choice
+
+
+
+variable for cpu/player score and link it with getElementByID
+
+hover over buttons and show image
+modal to ask how many rounds to play.
+edit computerLogic to sleep a float anywhere between 0 - 1.5 seconds before giving an answer
+
+make rock, paper, and scissors a button
+which initiates a round of r,p,s 
+show the winner of the round on screen and update their score
