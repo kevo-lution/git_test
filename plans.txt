@@ -1,6 +1,31 @@
 Steps:
 
+none of the other functions can start until a choice is chosen.
+so some type of EventListener
+
+
+after choice is chosen:
+    playRound will start
+    text asking user to pick will go away
+
+    playRound will:
+        check for score
+
+        get the choice from earlier, should that be a parameter?
+
+        start the computerLogic function, which shouldn't start until choice is given. Should choice be a parameter here too?
+
+        gives point to correct person
+
+
+
+
+
+
+
+
 Below image box, ask user to select a choice
+
 
 after choice is selected, tell them the computer is thinking
 
@@ -23,3 +48,6 @@ edit computerLogic to sleep a float anywhere between 0 - 1.5 seconds before givi
 make rock, paper, and scissors a button
 which initiates a round of r,p,s 
 show the winner of the round on screen and update their score
+
+
+

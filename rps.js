@@ -1,46 +1,77 @@
-
-
 // players
 let player1;
 let cpu;
+
+
 //options
 const rock = document.getElementById("rocks");
 const paper = document.getElementById("paper");
 const scissors = document.getElementById("scissors");
-let choice;
-const buttons = document.querySelectorAll("button")
+const options = [rock, paper, scissors];
 
-/*button listeners
-rock.addEventListener("click", playerLogic);
-paper.addEventListener("click", playerLogic);
-scissors.addEventListener("click", playerLogic);
 
-*/
+
+
+const buttons = document.querySelectorAll(".btn");
 
 // scoring logic
 let player1score = 0;
 let cpuScore = 0;
+let choice;
 
 
-function playerLogic() {
+
+function startGame(choice){
+	console.log(choice)
+	 let player1 = this.id
+	 return player1;	  
+
+	 //sleep inputs until after round is over.
+}
+
+function computerChoice(event){
+	event.target.disabled = true
+	console.log(`player 1 has chosen ${this.id}`)
+	random = Math.floor(Math.random() * options.length)
+	console.log(options[random].innerHTML)
+}
+
+let starters = document.getElementsByClassName("btn")
+for (let i = 0; i < starters.length; i++) {
+	starters[i].addEventListener("click", computerChoice);
+  }
+
+/*step 1, get buttons to show ID or name
+how to do that, get buttons to work first buttons work now 
+
+
+
+for (const buttons of btn){
+	btn.addEventListener("click", playerLogic());{
+		console.log(btn.id)
+	}
+}
+
+
+function playerLogic(){
 	buttons.forEach((button) => {
-		button.addEventListener("click", () => {
-		const buttonID = button.id
-	
-		let choice;
-		if (buttonID === "rocks"){
-			choice = rock;
-		} else if (buttonID === "paper"){
-			choice = paper
-		} else if (buttonID === "scissors"){
-			choice = scissors
-		}
-		choice = choice.innerText
-		console.log(choice)
-		return choice
-		})
-	});
-}	
+	button.addEventListener("click", () => {
+	const buttonID = button.id
+
+	let choice;
+	if (buttonID === "rocks"){
+		choice = rock;
+	} else if (buttonID === "paper"){
+		choice = paper
+	} else if (buttonID === "scissors"){
+		choice = scissors
+	}
+	choice = choice.innerText.toLocaleLowerCase(choice)
+	//console.log(`${choice}`)
+	return choice
+	})
+})};
+
 
 function waitForUser(choice){
 	console.log(`${choice} has been received.`)
@@ -51,6 +82,8 @@ function waitForUser(choice){
 }
 
 function computerLogic(){
+	// this code will not work as we do not have rock, paper, and scissors decided, so essentially, we have no way of giving an opponent response right now.
+	//make it choose from the array of rock, paper, and scissors
 	return Math.floor(Math.random() * 3);
 }
 
@@ -67,23 +100,14 @@ function updateWinner(winner){
 	}
 }
 
-function playRound(targetScore){
+function playRound(choice){
+	console.log(`${choice}, a game has begun`)
 	//checks score
-	while (player1score < targetScore && cpuScore < targetScore){
-		if (targetScore === player1score){
-			console.log("Congratulations, Player 1 has won the game.")
-			break;
-		} else if (targetScore === cpuScore){
-			console.log("Congratulations, CPU has won the game.")
-			break;
-		}
-
-
-		player1 = playerLogic();
+		player1 = choice;
 		waitForUser()
 		cpu = computerLogic(playerLogic);
 
-		console.log(`Player 1 chose ${player1 == 0 ? 'Rock' : player1 == 1 ? 'Paper' : 'Scissors'}`);
+		console.log(`Player 1 chose ${player1 == rock ? 'Rock' : player1 == paper ? 'Paper' : 'Scissors'}`);
 		console.log(`The computer chose ${cpu == 0 ? 'Rock' : cpu == 1 ? 'Paper' : 'Scissors'}`);
 
 		
@@ -122,10 +146,12 @@ function playRound(targetScore){
 			console.log(`Current score\n Player1: ${player1score}\n CPU: ${cpuScore}`)
 		}
 	}
-}
+
 
 
 //playRound(1)
+
+*/
 
 
 /*
